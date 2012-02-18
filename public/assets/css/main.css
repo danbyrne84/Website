@@ -1,0 +1,224 @@
+@font-face {
+  font-family: DeliciousRoman;
+  src: url('/assets/fonts/delicious-roman-webfont.woff');
+}
+
+body
+{
+    color: #000000;
+    background-color: #222;
+    background-repeat: repeat;
+    font-family: DeliciousRoman;
+    font-size: 12pt;
+}
+
+h1
+{
+	font-size: 28px;
+}
+
+h2
+{
+	font-size: 26px;	
+}
+
+header#main-header
+{
+    text-align: left;
+    border-bottom: 1px solid #000000;
+    background-image: -webkit-linear-gradient(bottom, #000, #FFF, #FFF, #FFF);
+}
+
+img#header-img
+{
+   padding-left: 40px;
+}
+
+footer#main-footer
+{
+	padding-bottom: 10px;
+	font-size: 12px;	
+}
+
+footer#main-footer div#icons
+{
+    display: block;
+    text-align: center;
+}
+
+div#navigation-bar
+{
+    height: 30px;
+    width: 100%;
+    display: block;
+    background: #222;
+    color: #FFF;
+    background-image: url('/assets/images/striped_bg.jpg');
+    background-repeat: repeat-both;
+}
+
+ul#navigation-list
+{
+    list-style: none;
+    padding-top: 5px;
+}
+
+ul#navigation-list li
+{
+    display: inline-block;
+    padding-right: 20px;
+}
+
+ul#navigation-list li a
+{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+a
+{
+    color: #06c;
+}
+
+h1
+{
+    color: #000;
+    font-size: 21px;
+    font-weight: bolder;
+}
+
+section#container
+{
+    border: 1px solid #000000;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px #000000;
+    text-align: center;
+    width: 960px;
+    margin: 0 auto;
+}
+
+section#main-container
+{
+    display: inline-block;
+}
+
+section#main-container section
+{
+	text-align: left;	
+}
+
+section#sidebar-left
+{
+    display: inline-block;
+    width: 250px;
+}
+
+article
+{
+    background-color: #ffffff;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    padding: 10px;
+    width: 500px;
+}
+
+article#about-me
+{
+	width: 250px;	
+}
+
+article#employment
+{
+	width: 250px;	
+}
+
+article#technologies
+{
+	width: 250px	
+}
+
+article#employment dd span
+{
+    display: block;   
+}
+
+article#latest-posts
+{
+	width: 400px;
+}
+
+article#latest-posts ul
+{
+	list-style-image: url('/assets/images/wordpress_icon.gif');	
+}
+
+article#latest-posts ul li,a,p
+{
+	vertical-align: top;
+}
+
+article#latest-posts ul li p
+{
+	margin-top: 0px;	
+}
+	
+article#contact-me
+{
+	width: 500px;
+}
+
+article#contact-me form div.form-item
+{
+	padding: 5px;
+}
+
+article#contact-me form header
+{
+	padding-bottom: 20px;	
+}
+
+article#contact-me form footer
+{
+	text-align: center;	
+}
+
+article#contact-me form label 
+{
+    display: inline-block;
+    vertical-align: top;
+    width: 60px;
+    text-align: right;	
+}
+
+article#contact-me
+{
+	text-align: center;	
+}
+
+article#contact-me form textarea, input
+{
+	width: 250px;	
+}
+
+article#contact-me form textarea
+{
+	height: 100px;	
+}
+
+article#journal-entries ul li p label
+{
+	display: inline-block;
+}
+
+article#journal-entries ul
+{
+	list-style-type: none;	
+}
+
+article#journal-entries ul li
+{
+	padding-bottom: 10px;	
+}
