@@ -114,6 +114,16 @@ class View
     }
     
     /**
+     * Repace unmatched template variables with empty strings
+     *
+     * @param $content
+     */
+    public function _parseUnmatched($content)
+    {
+        return preg_replace('/{[a-zA-Z_]*}/','', $content);
+    }
+
+    /**
      * Magic setter
      * 
      * @param string $key
@@ -135,9 +145,10 @@ class View
      */
     public function __toString()
     {   
-    	$parsed = $this->_parseSubviews($this->_content);
-    	$parsed = $this->_parseVariables($parsed);
-    	
+        $parsed = $this->_parseSubviews($this->_content);
+        $parsed = $this->_parseVariables($parsed);
+        $parsed = $this->_parseUnmatched($parsed);
+
     	return $parsed;
     }
     
