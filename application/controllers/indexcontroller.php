@@ -22,9 +22,7 @@ class IndexController extends \library\Controller
     public function indexAction()
     {
     	// set a two column layout
-    	$twoColumn = \library\View::fromFile(APP_PATH . '/layouts/two-column.tpl');
-        $twoColumn->sidebarLeft = \library\View::fromFile(APP_PATH . '/views/sidebar-about-me.tpl'); 
-	    $this->getLayout()->content = $twoColumn;
+        $twoColumn = \library\View::fromFile(APP_PATH . '/layouts/two-column.tpl');
     
 	    // get the homepage view
         $view = \library\View::fromFile(APP_PATH . '/views/home.tpl');
@@ -43,7 +41,11 @@ class IndexController extends \library\Controller
     	$view->posts = $posts;
     	
     	// render
-        $this->getLayout()->content = $view;
+        $twoColumn->content = $view;
+        $twoColumn->sidebarLeft = \library\View::fromFile(APP_PATH . '/views/sidebar-about-me.tpl'); 
+
+        $this->getLayout()->content = $twoColumn;
+
         $this->render();    	
     }
     
