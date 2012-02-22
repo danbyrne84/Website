@@ -27,6 +27,7 @@ class JournalController extends \library\Controller
 		// iterate over the results getting each row as a basic array rather than a data structure
 		// @todo implement DataStructure collection plus getData functionality
 		
+		$entries = array();
 		foreach($results as $entry)
 		{
 			$entries []= $entry->getData();
