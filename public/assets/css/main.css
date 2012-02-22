@@ -39,7 +39,7 @@ form div.form-item input,select,textarea
 {
 	width: 270px;
 	height: 20px;
-	-webkit-border-radius: 2px;
+	-webkit-border-radius: 3px;
 	border: 1px solid #0f0f0f;
 	background-color: #4a4947;
 	color: #ffffff;
