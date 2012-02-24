@@ -9,7 +9,9 @@
     <section id="container">
 
         <header id="main-header">
-            <img src="/assets/images/wwwheader.gif" id="header-img"></img>
+            <a href="/" title="Home">
+                <img src="/assets/images/wwwheader.gif" id="header-img"></img>
+            </a>
             <nav id="navigation-bar">
                 <ul id="navigation-list">
                     <li>
