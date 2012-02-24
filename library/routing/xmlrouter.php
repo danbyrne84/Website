@@ -95,8 +95,18 @@ class XmlRouter extends \library\Router
 		
 		$controllerString = '\\controllers\\' . $controller;
 		
-		//route
+		// check that the controller exists and there is a valid method on it to dispatch to
+		if(!class_exists($controllerString)){
+			throw new RoutingException('No controller [' . $controllerString . '] found');	
+		}
+
 		$controller = new $controllerString();
+
+		if(!method_exists($controller, $action)){
+			throw new RoutingException('No action [' . $action . '] found in controller [' . $controllerString . ']');
+		}
+
+		// dispatch
 		$controller->$action();
 	}
 }
