@@ -152,13 +152,15 @@ section#main-container
 
 section#main-container section
 {
-	text-align: left;	
+	text-align: left;
+	float: right;	
 }
 
 section#sidebar-left
 {
     display: inline-block;
-    width: 250px;
+    float: left;
+    padding-left: 30px;
 }
 
 article
