@@ -192,11 +192,6 @@ article#employment dd span
     display: block;   
 }
 
-article#latest-posts
-{
-	width: 400px;
-}
-
 article#latest-posts ul
 {
 	list-style-image: url('/assets/images/wordpress_icon.gif');	
