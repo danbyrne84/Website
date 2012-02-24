@@ -6,7 +6,7 @@
 		  		<ul>
                     {posts}
                         <li>
-                        	<a href="{link}">{title}</a> by {author}
+                            <a href="{link}" target="_blank">{title}</a> by {author}
                         	<p>
                         		{description}
                         	</p>
