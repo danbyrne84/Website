@@ -10,7 +10,7 @@
 
         <header id="main-header">
             <img src="/assets/images/wwwheader.gif" id="header-img"></img>
-            <div id="navigation-bar">
+            <nav id="navigation-bar">
                 <ul id="navigation-list">
                     <li>
                         <a href="/" tite="Homepage">Home</a>
@@ -31,10 +31,12 @@
                         <a href="/contact/" title="Contact Me">Contact Me</a>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </header>
 
-        {content}
+		<section id="main-content">
+			{content}
+		</section>
 
         <footer id="main-footer">
             <div id="icons"></div>

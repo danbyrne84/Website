@@ -12,6 +12,13 @@ body
     font-size: 12pt;
 }
 
+
+h1,h2,h3
+{
+	padding: 5px 0px 5px 0px;
+	margin: 5px 0px 5px 0px;	
+}
+
 h1
 {
 	font-size: 28px;
@@ -20,6 +27,16 @@ h1
 h2
 {
 	font-size: 26px;	
+}
+
+.clear
+{
+	clear: both;	
+}
+
+section#main-content
+{
+	padding: 10px;	
 }
 
 form div.form-item
@@ -75,7 +92,7 @@ footer#main-footer div#icons
     text-align: center;
 }
 
-div#navigation-bar
+nav#navigation-bar
 {
     height: 30px;
     width: 100%;
@@ -150,7 +167,6 @@ article
     display: inline-block;
     vertical-align: top;
     text-align: left;
-    padding: 10px;
     width: 500px;
 }
 
@@ -227,4 +243,51 @@ article#journal-entries ul
 article#journal-entries ul li
 {
 	padding-bottom: 10px;	
+}
+
+section#projects nav
+{
+	display: inline-block;
+	text-align: left;
+	width: 200px;
+	padding-left: 30px;
+	float: left;
+}
+
+section#projects nav ul
+{
+	margin: 0px;
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+section#projects article.project
+{
+	width: 700px;
+	float: right;	
+}
+
+section#projects article.project header h3 a
+{
+	text-decoration: none;	
+}
+
+section#projects article.project header ul.links, ul.screenshots
+{
+	display: inline-block;
+	margin: 0px;
+	margin-bottom: 5px;
+	list-style-type: none;
+	padding-left: 0px;
+	font-size: 14px;	
+}
+
+section#projects article.project header ul.screenshots
+{
+	display: block;	
+}
+
+section#projects article.project header ul.screenshots li
+{
+	display: inline-block;	
 }

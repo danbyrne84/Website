@@ -1,3 +1,8 @@
+<section id="about-me">
+	<header>
+		<h1>About Me</h1>
+	</header>
+	
         <article id="about-me">
             <header>
                 <h1>About Me</h1>
@@ -65,3 +70,4 @@
                 </ul>
             </section>
         </article>
+</section>
