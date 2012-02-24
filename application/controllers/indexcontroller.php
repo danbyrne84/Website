@@ -28,7 +28,7 @@ class IndexController extends \library\Controller
         $view = \library\View::fromFile(APP_PATH . '/views/home.tpl');
         
         // put latest blog entries on homepage
-        $wordpress = new \plugins\Wordpress('http://www.danielbyrne.net/feed/');
+        $wordpress = new \plugins\Wordpress('http://blog.danielbyrne.net/feed/');
     	$latestPosts = $wordpress->getLatest(5);
     	
     	//@todo sort it out....

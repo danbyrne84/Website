@@ -16,10 +16,7 @@
                         <a href="/" tite="Homepage">Home</a>
                     </li>
                     <li>
-                        <a href="/blog/" tite="My Nerd Blog">Blog</a>
-                    </li>
-                    <li>
-                    	<a href="/journal/" title="Journal">Journal</a>
+                        <a href="http://blog.danielbyrne.net/" tite="My Nerd Blog">Blog</a>
                     </li>
                     <li>
                         <a href="/projects/" tite="My Projects">My Projects</a>
