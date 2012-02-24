@@ -50,4 +50,11 @@
     		<action>createAction</action>
     	</params>
     </route>
+    <route>
+        <url>projects</url>
+        <params>
+            <controller>projectController</controller>
+            <action>indexAction</action>
+        </params>
+    </route>
 </routes>
