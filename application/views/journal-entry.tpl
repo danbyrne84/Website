@@ -15,7 +15,7 @@
 				<label for="author">Posted By:</label>
 				
 				<a href="#"><span id="author">{author}</span></a>
-				<span id="date">{date}</span>
+				<span id="date">on {date}</span>
 			</p>
 			
 			<p><span id="body">{body}</p>

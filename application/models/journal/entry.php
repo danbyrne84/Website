@@ -82,20 +82,16 @@ class Entry extends \library\DataStructure
 	 */
 	public function validate()
 	{
-		return true;
-		
-		// date must be valid
-		if(!$this->_data['date'] instanceOf \DateTime){ echo 'date' . PHP_EOL;return false; }
-		
 		// validate required keys are present
 		$diff = array_diff(
 			array('author','date','subject','body'),
 			array_keys($this->_data)
 		);
-		if(count($diff) > 0){ echo 'keys' . PHP_EOL;return false; }
+		if(count($diff) > 0){ return false; }
 		
 		return true;
 	}
+	
 }
 
 ?>

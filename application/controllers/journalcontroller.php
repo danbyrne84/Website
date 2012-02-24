@@ -30,7 +30,14 @@ class JournalController extends \library\Controller
 		$entries = array();
 		foreach($results as $entry)
 		{
-			$entries []= $entry->getData();
+			$entryData = $entry->getData();
+			if (is_numeric($entryData['date'])){
+                $entryData['date'] = date('r', $entryData['date']);
+			}
+			else{
+                $entryData['date'] = 'Unknown';
+			}
+			$entries []= $entryData;
 		}
 		
 		$view->entries = $entries;
@@ -57,11 +64,7 @@ class JournalController extends \library\Controller
 			$timestamp = strtotime($_POST['date']);
 			
 			// now into a \DateTime object that the structure requires
-			if (false !== $timestamp) 
-			{
-				$date = new \DateTime($timestamp);
-			}
-			else 
+			if (false == $timestamp) 
 			{
 				$valid = false;
 				$message = 'Sorry, the date that you entered could not be recognised. Please use the formate d-m-y';
