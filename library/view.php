@@ -45,16 +45,19 @@ class View
      */
     public static function fromFile($path)
     {
+        if(!file_exists($path)){
+            throw new view\ViewException("Template does not exist [$path]");
+        }
+
         $template = file_get_contents($path);
 
-        if (false === $template)
-        {
-            throw new \library\view\LoadException('Unable to load template [' . $path . ']');
+        if (false === $template){
+            throw new view\ViewException("Unable to load template [$path]");
         }
 
         return new self($template);
 	}
-	    
+
 	/**
 	 * _parseSubviews
 	 * Look for and replace looping constructs with appropriate subviews
