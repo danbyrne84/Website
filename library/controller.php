@@ -43,7 +43,7 @@ class Controller
 	 */
 	public function render()
 	{
-		$runtime = round(microtime() - START_TIME, 4);
+		$runtime = round(microtime(true) - START_TIME, 4);
 		$this->_layout->runtime = 'page generated in ' . $runtime . ' ms';
 		
 		$this->_layout->render();

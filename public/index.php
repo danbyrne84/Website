@@ -7,7 +7,7 @@ if (!defined('APPLICATION_ENV')) {
     define('APPLICATION_ENV', 'production');
 }
 
-define ('START_TIME', microtime() );
+define ('START_TIME', microtime(true) );
 
 define ('APP_PATH',    __DIR__ . '/../application');
 define ('LIB_PATH',    __DIR__ . '/../library');
