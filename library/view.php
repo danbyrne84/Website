@@ -56,15 +56,15 @@ class View
         }
 
         return new self($template);
-	}
+    }
 
-	/**
-	 * _parseSubviews
-	 * Look for and replace looping constructs with appropriate subviews
-	 *
-	 * @param  string $content
-	 * @return string 
-	 */
+    /**
+     * _parseSubviews
+     * Look for and replace looping constructs with appropriate subviews
+     *
+     * @param  string $content
+     * @return string 
+     */
     protected function _parseSubviews($content)
     {
         // look for looping constructs and instantiate a new view, passing the model
@@ -73,23 +73,23 @@ class View
         if ($matchCount > 0){
             // combine the tags and content returned from the regexp
             $replacements = array_combine(
-            	array_values($matches['tag']),
-            	array_values($matches['content'])
+                array_values($matches['tag']),
+                array_values($matches['content'])
             );            
-			// replace the matched tags with their subviews
+            // replace the matched tags with their subviews
             foreach($replacements as $tag => $replacement){
                 if(isset($this->_data[$tag]) && is_array($this->_data[$tag])){
-                	// this case handles an array of arrays, for a looping construct
-                	// @todo single array of values will just require one subview
-					$subviews = array();
-                	foreach ($this->_data[$tag] as $index => $data) {
-						$subviews []= new self($replacement, $data);
-					}
-					$content = preg_replace('/{(' . $tag . ')}[\s\S]*{\/\1}/', implode(PHP_EOL, $subviews), $content);
-				}
+                    // this case handles an array of arrays, for a looping construct
+                    // @todo single array of values will just require one subview
+                    $subviews = array();
+                    foreach ($this->_data[$tag] as $index => $data) {
+                        $subviews []= new self($replacement, $data);
+                    }
+                    $content = preg_replace('/{(' . $tag . ')}[\s\S]*{\/\1}/', implode(PHP_EOL, $subviews), $content);
+                }
             }
         }
-    	
+        
         return $content;
     }
     
@@ -102,13 +102,13 @@ class View
     protected function _parseVariables($content)
     {
         // replace any template variables if found in data array
-    	$replacements = array_filter($this->_data, function($item){
-        	return is_scalar($item) || $item instanceof View;
+        $replacements = array_filter($this->_data, function($item){
+            return is_scalar($item) || $item instanceof View;
         });
 
         $patterns = array();
         foreach ($replacements as $key => $val) {
-        	$patterns[$key] = "/\{$key\}/";
+            $patterns[$key] = "/\{$key\}/";
         }
         
         // return parsed content
@@ -152,7 +152,7 @@ class View
         $parsed = $this->_parseVariables($parsed);
         $parsed = $this->_parseUnmatched($parsed);
 
-    	return $parsed;
+        return $parsed;
     }
     
     /**
@@ -162,7 +162,7 @@ class View
      */
     public function render()
     {
-    	echo $this->__toString();
+        echo $this->__toString();
     }
     
 }

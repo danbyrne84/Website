@@ -5,24 +5,24 @@ namespace library;
 class Router
 {
 
-	/**
-	 * Predispatch hook
-	 * 
-	 */
-	public function preDispatch()
-	{
-		
-	}
-	
-	/**
-	 * Postdispatch hook
-	 * 
-	 */
-	public function postDispatch()
-	{
-		
-	}
-	
+    /**
+     * Predispatch hook
+     * 
+     */
+    public function preDispatch()
+    {
+        
+    }
+    
+    /**
+     * Postdispatch hook
+     * 
+     */
+    public function postDispatch()
+    {
+        
+    }
+    
     /**
      * Route the request
      * 
@@ -30,7 +30,7 @@ class Router
      */
     public function route($request)
     {
-		
+        
     }
 }
 

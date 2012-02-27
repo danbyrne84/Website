@@ -3,7 +3,7 @@ namespace models;
 
 class Journal
 {
-	
+    
 }
 
 ?>
