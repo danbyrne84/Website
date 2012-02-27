@@ -12,6 +12,9 @@
     		<li>
     			<a href="#ardubot">Arduino Rover</a>
     		</li>
+                <li>
+                        <a href="#chip8">Chip8 Emulator in C# 4.0</a>
+                </li>
     	</ul>
     </nav>
 	<article class="project">
@@ -67,6 +70,29 @@
 			<li>Integrated (well, attatched) webcam</li>
 			<li>.NET interface for controlling the bot, and moving the webcam using its HTTP interface</li>
 		</ul>
+	</article>
+
+        <article class="project">
+        <header>
+            <h3>
+                <a name="chip8" id="chip8" alt="Chip8 Emulator"></a>
+                Chip 8 Emulator written in C#
+            </h3>
+            <ul class="links">
+                <li><a href="#">View on GitHub</a></li>
+                <li><a href="http://en.wikipedia.org/wiki/CHIP-8">Chip8 on Wikipedia</a></li>
+            </ul>
+            <ul class="screenshots">
+                <li>
+                    <img src="/assets/images/projects/PONG_CHIP8.png" alt="Pong running on Chip8" title="Pong running on Chip8" />
+                </li>
+                <li>
+                    <img src="/assets/images/projects/PACMAN_CHIP8.gif" alt="Pacman clone running on Chip8" title="Pacman clone running on Chip8" />
+                </li>
+            </ul>
+        </header>
+        <p>I'm currently developing my first emulator from scratch, written in C# 4.0 it should, given a little bit of time, emulate the Chip8 system (technically a virtual machine)</p>
+        <p>Not much to tell yet...</p>
 	</article>
 	<div class="clear"></div>
 </section>
