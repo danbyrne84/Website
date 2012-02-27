@@ -288,3 +288,8 @@ section#projects article.project header ul.screenshots li
 {
 	display: inline-block;	
 }
+
+section#projects article.project header ul.links li
+{
+	display: inline-block;
+}
