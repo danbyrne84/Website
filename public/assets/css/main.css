@@ -15,57 +15,62 @@ body
 
 h1,h2,h3
 {
-	padding: 5px 0px 5px 0px;
-	margin: 5px 0px 5px 0px;	
+    padding: 5px 0px 5px 0px;
+    margin: 5px 0px 5px 0px;	
 }
 
 h1
 {
-	font-size: 28px;
+    font-size: 28px;
 }
 
 h2
 {
-	font-size: 22px;
+    font-size: 22px;
+}
+
+a.icon
+{
+    text-decoration: none;
 }
 
 .clear
 {
-	clear: both;	
+    clear: both;	
 }
 
 section#main-content
 {
-	padding: 10px;	
+    padding: 10px;	
 }
 
 form div.form-item
 {
-	padding: 5px;
-	vertical-align:top;
+    padding: 5px;
+    vertical-align:top;
 }
 
 form div.form-item label
 {
-	width: 100px;
-	display: inline-block;
-	text-align: right;
+    width: 100px;
+    display: inline-block;
+    text-align: right;
 }
 
 form div.form-item input,select,textarea
 {
-	width: 270px;
-	height: 20px;
-	-webkit-border-radius: 3px;
-	border: 1px solid #0f0f0f;
-	background-color: #4a4947;
-	color: #ffffff;
+    width: 270px;
+    height: 20px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #0f0f0f;
+    background-color: #4a4947;
+    color: #ffffff;
 }
 
 form div.form-item textarea
 {
-	height: 100px;
-	width: 267px;
+    height: 100px;
+    width: 267px;
 }
 
 header#main-header
@@ -82,8 +87,8 @@ img#header-img
 
 footer#main-footer
 {
-	padding-bottom: 10px;
-	font-size: 12px;	
+    padding-bottom: 10px;
+    font-size: 12px;	
 }
 
 footer#main-footer div#icons
@@ -152,8 +157,8 @@ section#main-container
 
 section#main-container section
 {
-	text-align: left;
-	float: right;	
+    text-align: left;
+    float: right;	
 }
 
 section#sidebar-left
@@ -174,17 +179,17 @@ article
 
 article#about-me
 {
-	width: 250px;	
+    width: 250px;	
 }
 
 article#employment
 {
-	width: 250px;	
+    width: 250px;	
 }
 
 article#technologies
 {
-	width: 250px	
+    width: 250px	
 }
 
 article#employment dd span
@@ -194,27 +199,27 @@ article#employment dd span
 
 article#latest-posts ul
 {
-	list-style-image: url('/assets/images/wordpress_icon.gif');	
+    list-style-image: url('/assets/images/wordpress_icon.gif');	
 }
 
 article#latest-posts ul li,a,p
 {
-	vertical-align: top;
+    vertical-align: top;
 }
 
 article#latest-posts ul li p
 {
-	margin-top: 0px;	
+    margin-top: 0px;	
 }
 	
 article#contact-me
 {
-	width: 500px;
+    width: 500px;
 }
 
 article#contact-me form header
 {
-	padding-bottom: 20px;	
+    padding-bottom: 20px;	
 }
 
 article#contact-me form footer
