@@ -50,8 +50,7 @@
                     </dd>
                     <dt>January 2007 - Present</dt>
                     <dd>
-                        <span class="job-title">Contractor</span>
-                        <span class="company">Freelance</span>
+                        <span class="job-title">Freelance</span>
                     </dd>
                 </dl>
                 <dl class="previous">

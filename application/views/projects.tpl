@@ -22,7 +22,7 @@
 			<h3><a name="homepage" id="homepage" alt="Homepage Framework"></a>Homepage Framework & PHP Library</h3>
 			<ul class="links">
 				<li>
-					<a href="#">View on GitHub</a>
+					<a href="https://github.com/danbyrne84/Website">View on GitHub</a>
 				</li>
 			</ul>
 		</header>
@@ -79,7 +79,7 @@
                 Chip 8 Emulator written in C#
             </h3>
             <ul class="links">
-                <li><a href="#">View on GitHub</a></li>
+                <li><a href="https://github.com/danbyrne84/Chip-8-Emulator">View on GitHub</a></li>
                 <li><a href="http://en.wikipedia.org/wiki/CHIP-8">Chip8 on Wikipedia</a></li>
             </ul>
             <ul class="screenshots">
