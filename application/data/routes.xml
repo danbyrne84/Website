@@ -57,4 +57,11 @@
             <action>indexAction</action>
         </params>
     </route>
+    <route>
+        <url>todo</url>
+        <params>
+            <controller>personalController</controller>
+            <action>todoAction</action>
+        </params>
+    </route>
 </routes>
