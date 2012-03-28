@@ -4,20 +4,9 @@ namespace controllers;
 
 class ProjectController extends \library\Controller
 {
-
-    /**
-     * Constructor
-     * 
-     */
-    public function __construct()
-    {
-        $layout = \library\View::fromFile(APP_PATH . '/layouts/main.tpl');
-        $this->setLayout($layout);
-    }
-    
     /**
      * IndexAction
-     * 
+     *
      */
     public function indexAction()
     {
@@ -25,7 +14,7 @@ class ProjectController extends \library\Controller
         $view = \library\View::fromFile(APP_PATH . '/views/projects.tpl');
         $this->getLayout()->content = $view;
 
-        $this->render();        
+        $this->render();
     }
 }
 ?>

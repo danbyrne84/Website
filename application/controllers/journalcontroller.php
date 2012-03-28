@@ -1,32 +1,22 @@
-<?php 
+<?php
 
 namespace controllers;
 
 class JournalController extends \library\Controller
 {
     /**
-     * Constructor
-     * 
-     */
-    public function __construct()
-    {
-        $layout = \library\View::fromFile(APP_PATH . '/layouts/main.tpl');
-        $this->setLayout($layout);
-    }
-    
-    /**
      * List all journal entries
-     * 
+     *
      */
     public function indexAction()
     {
         // retrieve all journal entries from Mongo
         $results = \models\journal\Entry::getAll();
         $view = \library\View::fromFile(APP_PATH . '/views/journal-entry.tpl');
-        
+
         // iterate over the results getting each row as a basic array rather than a data structure
         // @todo implement DataStructure collection plus getData functionality
-        
+
         $entries = array();
         foreach($results as $entry)
         {
@@ -39,16 +29,16 @@ class JournalController extends \library\Controller
             }
             $entries []= $entryData;
         }
-        
+
         $view->entries = $entries;
-        
+
         $this->getLayout()->content = $view;
         $this->render();
     }
 
     /**
      * Action for displaying processing a new journal entry
-     * 
+     *
      */
     public function createAction()
     {
@@ -58,30 +48,30 @@ class JournalController extends \library\Controller
 
         // if we've received a posted form, process it
         if(isset($_POST['formvar']) && 'journal-create' === $_POST['formvar'])
-        {   
+        {
             // parse the given date into a timestamp
             $valid = true;
             $timestamp = strtotime($_POST['date']);
-            
+
             // now into a \DateTime object that the structure requires
-            if (false == $timestamp) 
+            if (false == $timestamp)
             {
                 $valid = false;
                 $message = 'Sorry, the date that you entered could not be recognised. Please use the formate d-m-y';
             }
-            
-            if( true === $valid ) 
+
+            if( true === $valid )
             {
-                try 
-                {   
+                try
+                {
                     $data = array (
                         'author'  => $_POST['author'],
                         'date'    => $date,
                         'subject' => $_POST['subject'],
                         'body'    => $_POST['body'],
-                        'mood'    => $_POST['mood']     
+                        'mood'    => $_POST['mood']
                     );
-                    
+
                     $entry = new \models\journal\Entry($data);
                     $entry->save();
                     $view->message = 'Journal entry saved.';
@@ -91,7 +81,7 @@ class JournalController extends \library\Controller
                     $view->message = 'Sorry, there was a problem validating the journal entry. Please try again.';
                 }
             }
-            else 
+            else
             {
                 $view->message = $message;
             }
@@ -100,14 +90,14 @@ class JournalController extends \library\Controller
         {
             $view->form = $form;
         }
-        
+
         $this->getLayout()->content = $view;
         $this->render();
     }
-    
+
     public function readAction()
     {
-        
+
     }
 }
 
