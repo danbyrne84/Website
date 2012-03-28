@@ -83,6 +83,9 @@ class View
                     // @todo single array of values will just require one subview
                     $subviews = array();
                     foreach ($this->_data[$tag] as $index => $data) {
+                        if( method_exists($data, 'toArray') ){
+                            $data = $data->toArray();
+                        }
                         $subviews []= new self($replacement, $data);
                     }
                     $content = preg_replace('/{(' . $tag . ')}[\s\S]*{\/\1}/', implode(PHP_EOL, $subviews), $content);
