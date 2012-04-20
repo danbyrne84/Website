@@ -6,6 +6,8 @@ class Encryption
 
     protected $_key = null;
 
+    protected $_iv = null;
+
     /**
      * Constructor
      * @param $key
@@ -13,6 +15,7 @@ class Encryption
     protected function __construct($key)
     {
         $this->_key = $key;
+        $this->_iv = mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_ECB), MCRYPT_RAND);
     }
 
     /**
@@ -33,8 +36,7 @@ class Encryption
      */
     public function encrypt($data)
     {
-        $iv = mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_CFB), MCRYPT_RAND);
-        return mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $this->_key, $data, MCRYPT_MODE_CFB, $iv);
+        return mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $this->_key, $data, MCRYPT_MODE_ECB, $this->_iv);
     }
 
     /**
@@ -45,6 +47,6 @@ class Encryption
      */
     public function decrypt($data)
     {
-        return mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $this->_key, $data, MCRYPT_MODE_CFB, $iv);
+        return mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $this->_key, $data, MCRYPT_MODE_ECB, $this->_iv);
     }
 }
