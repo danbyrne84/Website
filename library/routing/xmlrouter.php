@@ -41,7 +41,7 @@ class XmlRouter extends \library\Router
     {
         $path = explode('/', $request);
         $query = '/routes';
-        
+
         // filter out leading and trailing slashes
         $path = array_filter($path, function($part){
             if(!empty($part)){
@@ -54,22 +54,43 @@ class XmlRouter extends \library\Router
         {
             foreach($path as $part)
             {
-                $query .= '/route/url[text()="' . $part . '"]';
+                // if current path exists and has a query parameter ignore the next part
+                if( $query !== null ){
+                    $curRoute = $xpath->query($query);
+
+                    $result = $curRoute->item(0)->parentNode;
+                    $param = $xpath->query('params/param', $curRoute->item(0));
+
+                    if ($param->length > 0)
+                    {
+                        //@todo data layer & dedup query
+                        $paramName = $param->item(0)->nodeValue;
+                        $_GET[$paramName] = $part;
+                    }
+                    else
+                    {
+                        $query .= '/route/url[text()="' . $part . '"]/..';
+                    }
+                }
+                else
+                {
+                    $query .= '/route/url[text()="' . $part . '"]/..';
+                }
             }
         }
         else
         {
-            $query .= '/route/url[text()]';
+            $query .= '/route/url[text()]/..';
         }
 
         // locate the page
         $route = $xpath->query($query);
-        
+
         if (0 === $route->length){
             $route = $xpath->query('/routes/route/url[text()="__404__"]');
         }
         
-        return (0 === $route->length) ? false : $route->item(0)->parentNode;
+        return (0 === $route->length) ? false : $route->item(0);
     }
     
     /**
@@ -77,13 +98,18 @@ class XmlRouter extends \library\Router
      * 
      * @param string $request
      */
-    public function route($request)
+    public function route($request, $throw = false)
     {
         $xpath = new \DOMXPath($this->_data);
         $route = $this->_findRoute($xpath, $request);
         
         if (false === $route){
-            throw new RoutingException('No route found for URI [' . $request . ']');
+            if (true === $throw) {
+                throw new RoutingException('No route found for URI [' . $request . ']');
+            }
+            die('request' . $request);
+            header('HTTP/1.0 404 Not Found');
+            exit(0);
         }
         
         // retrieve the controller and action
