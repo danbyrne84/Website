@@ -143,7 +143,25 @@ class View
         $this->_content = $this->_parseVariables($this->_content);
         $this->_content = $this->_parseSubviews($this->_content);
     }
-    
+
+    /**
+     * Append content after a given key
+     *
+     * @param $key
+     * @param $value
+     * @return bool
+     */
+    public function append($key, $value)
+    {
+        $key = '{' . $key . '}';
+
+        //find given pattern
+        $pos = strpos($this->_content, $key);
+        if (false === $pos){ return false; }
+
+        $this->_content = str_replace($key, $key . $value, $this->_content);
+    }
+
     /**
      * Return string representation of this view, with template values filled
      *
