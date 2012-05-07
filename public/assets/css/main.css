@@ -298,3 +298,23 @@ section#projects article.project header ul.links li
 {
 	display: inline-block;
 }
+
+img#profile-pic
+{
+    float: left;
+    height: 90px;
+    width: 90px;
+    border-radius: 6px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
